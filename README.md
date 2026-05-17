@@ -52,3 +52,23 @@
 **Mac / Linux 사용자**
 ```bash
 bash ignite.sh
+
+Windows 사용자
+Windows 기본 CMD 또는 PowerShell 환경에서는 .sh 스크립트가 직접 실행되지 않습니다. 반드시 Git Bash 또는 WSL(Windows Subsystem for Linux) 환경이 필요합니다.
+# WSL(Windows Subsystem for Linux) 사용 시 실행 예시
+wsl bash ignite.sh
+
+# Git Bash 사용 시 실행 예시
+bash ignite.sh
+
+(추후 Windows 네이티브 환경을 지원하는 ignite.bat 파일이 추가될 예정입니다.)
+🧠 첫 번째 지식 Ingest 하기
+터미널 세팅과 위키 초기화(ignite.sh)가 완료되었다면, 별도의 복잡한 스크립트 없이 즉시 AI에게 자연어로 데이터 정리와 저장을 지시할 수 있습니다. 터미널에 아래와 같이 입력하여 첫 지식을 적재해 보십시오.
+실제 활용 예시
+# Claude를 활용한 문서 정리 및 적재
+claude "오늘 읽은 글 내용 정리해서 learnings 폴더에 ingest 해줘"
+
+# Gemini를 활용한 기존 지식과의 구조화 연동
+gemini "새 아이디어를 methods 폴더 내용과 연결해서 구조화해줘"
+
+Inspired by Sub-brain Intelligence. Built for Collective Wisdom.
