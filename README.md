@@ -1,4 +1,3 @@
-
 # LLM Wiki Starter: The Dual-Engine Intelligence Framework
 
 > "영감을 자산으로, 파편을 지능으로. 나만의 커스텀 LLM Wiki를 구축하는 가장 완벽한 프로토콜."
@@ -16,7 +15,6 @@
 ---
 
 ## 🛠️ Setup Guide (설치 및 세팅)
-
 본 시스템을 가동하기 위한 OS별 필수 도구 설치 가이드입니다.
 
 ### 1. Obsidian (지식 보관소) 설치
@@ -35,10 +33,22 @@
 
 ---
 
-## 📥 Getting Started (Onboarding)
-1. **Repo Star**: 이 레포지토리에 'Star'를 눌러 지지해 주세요.
-2. **Ignition**: 설치한 터미널 플러그인을 열고 `./ignite.sh`를 실행하여 나만의 위키 구조를 생성하십시오.
-3. **Onboarding Page**: [인터랙티브 가이드](https://ljhljh0703-cmd.github.io/sub-brain-engine/)에서 시스템 개념을 시각적으로 확인하십시오.
+## 💻 CLI 실행 및 로그인 (Authentication)
+설치가 완료되면 터미널에서 아래 명령어를 통해 AI를 즉시 호출할 수 있습니다.
+
+**기본 실행 명령어**
+- Claude CLI: `claude`
+- Gemini CLI: `gemini`
+
+**초기 로그인 및 설정 방식**
+- **플랫폼 구독자**: 명령어 입력 시 브라우저 창이 팝업되며, 웹 로그인 연동을 통해 즉시 사용 가능합니다.
+- **비구독자 (API 사용자)**: 각 플랫폼의 API Key 발급이 선행되어야 합니다. 초기 실행 시 터미널 안내에 따라 API Key를 입력하여 환경을 세팅하십시오.
 
 ---
-*Inspired by Sub-brain Intelligence. Built for Collective Wisdom.*
+
+## 🚀 실행 방법 (Getting Started)
+터미널 플러그인을 열거나 로컬 터미널에서 아래 명령어를 실행하여 나만의 위키 구조를 생성하십시오. 추가적인 시스템 개념은 [인터랙티브 가이드](https://ljhljh0703-cmd.github.io/sub-brain-engine/)에서 확인 가능합니다.
+
+**Mac / Linux 사용자**
+```bash
+bash ignite.sh
