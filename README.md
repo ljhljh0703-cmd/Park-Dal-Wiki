@@ -1,9 +1,10 @@
-# LLM Wiki Starter: The Dual-Engine Intelligence Framework
+# Park-Dal-Wiki: The Dual-Engine Intelligence Framework
 
-> "영감을 자산으로, 파편을 지능으로. 나만의 커스텀 LLM Wiki를 구축하는 가장 완벽한 프로토콜."
+> "영감을 자산으로, 파편을 지능으로. 나만의 커스텀 LLM Wiki를 구축하는 전문 작가의 프로토콜."
 
 ## 🚀 Overview
-본 레포지토리는 고밀도 지식 베이스인 **LLM Wiki**를 구축하기 위한 핵심 아키텍처와 운영 지침을 제공합니다. Andrej Karpathy의 행동 원칙과 Dual-Engine(Gemini/Claude) 오케스트레이션 로직을 기반으로 설계되었습니다.
+본 레포지토리는 고밀도 지식 베이스인 **LLM Wiki**를 박달재 식으로 구축하기 위한 핵심 아키텍처와 운영 지침을 제공합니다. Andrej Karpathy의 행동 원칙과 Dual-Engine(Gemini/Claude) 오케스트레이션 로직 기반 위
+Hermes의 자기성장 구조를 반영해 설계했습니다.
 
 ---
 
@@ -53,7 +54,7 @@
 ```bash
 bash ignite.sh
 
-Windows 사용자
+** Windows 사용자**
 Windows 기본 CMD 또는 PowerShell 환경에서는 .sh 스크립트가 직접 실행되지 않습니다. 반드시 Git Bash 또는 WSL(Windows Subsystem for Linux) 환경이 필요합니다.
 # WSL(Windows Subsystem for Linux) 사용 시 실행 예시
 wsl bash ignite.sh
