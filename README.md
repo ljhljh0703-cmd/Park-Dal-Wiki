@@ -1,129 +1,127 @@
-# Park-Dal-Wiki: The Dual-Engine Intelligence Framework
+**한국어** | [English](README.en.md)
 
-> "영감을 자산으로, 파편을 지능으로. 나만의 커스텀 LLM Wiki를 구축하는 전문 작가의 프로토콜."
+# Park-Dal-Wiki
+> 내 지식이 휘발되지 않도록, AI와 함께 쓰는 자료실의 시작점.
 
-## 🚀 Overview
-본 레포지토리는 고밀도 지식 베이스인 **LLM Wiki**를 박달재 식으로 구축하기 위한 핵심 아키텍처와 운영 지침을 제공합니다. Andrej Karpathy의 행동 원칙과 Dual-Engine(Gemini/Claude) 오케스트레이션 로직 기반 위에 Hermes의 자기성장 구조를 반영해 설계했습니다.
+![stage](https://img.shields.io/badge/stage-starter-111111?style=flat-square)
+![workflow](https://img.shields.io/badge/workflow-Obsidian%20Vault-111111?style=flat-square)
+![guide](https://img.shields.io/badge/guide-Windows-111111?style=flat-square)
 
----
+## 왜 Park-Dal-Wiki인가
 
-## 🏗️ Core Assets
-- **[AGENTS.md](./AGENTS.md)**: 외부 AI 에이전트가 이 레포지토리를 인지했을 때 수행해야 할 업무 지침.
-- **[templates/](./templates/)**: 'Lite' 버전의 운영 프로토콜(CLAUDE.md, GEMINI.md) 포함.
-- **[ignite.sh](./ignite.sh)**: 사용자 목적에 맞춰 위키 구조를 자동 생성하는 초기화 스크립트.
+메모는 남는데, 막상 필요할 때는 어디에 적었는지부터 다시 찾게 됩니다. Park-Dal-Wiki는 Obsidian 폴더를 지식이 쌓이는 자리로 만들고, AI와 대화할 때 필요한 맥락을 그 안에 차곡차곡 남기기 위한 작은 시작 키트입니다.
 
----
+## 세 가지로 시작합니다
 
-## 🛠️ Setup Guide (설치 및 세팅)
-본 시스템을 가동하기 위한 OS별 필수 도구 설치 가이드입니다.
+- **폴더부터 정합니다.** — `ignite.sh`가 기록·학습·방법론을 위한 기본 폴더와 운영 템플릿을 만듭니다.
+- **기록은 Markdown으로 남깁니다.** — Obsidian에서 쓴 노트가 나중에 다시 찾고 연결할 수 있는 자료가 됩니다.
+- **AI와 함께 씁니다.** — agy 또는 Codex CLI는 선택 도구입니다. AI가 제안한 내용은 사람이 확인한 뒤 기록합니다.
 
-### 1. Obsidian (지식 보관소) 설치
-- **macOS/Windows**: [공식 다운로드](https://obsidian.md/download)에서 설치하십시오.
+## 구조
 
-### 2. Obsidian 터미널 플러그인 설치 (권장)
-옵시디언 내부에서 AI 엔진과 즉각적으로 소통하기 위해 터미널 환경을 구축합니다.
-1. Obsidian 실행 후 좌측 하단 `Settings (설정)` 접속.
-2. `Community plugins` -> `Turn on community plugins` 활성화.
-3. `Browse` 버튼 클릭 후 **"Terminal"** 검색.
-4. `Terminal` (또는 선호하는 터미널 플러그인) 설치 및 **Enable(활성화)**.
+```mermaid
+flowchart LR
+  A[기록과 자료] --> B[Obsidian Vault]
+  B --> C[Markdown 노트]
+  C --> D[AI CLI\nagy 또는 Codex]
+  D --> E[제안과 초안]
+  E --> F[확인 후 기록]
+  G[ignite.sh] --> H[기본 폴더와 운영 템플릿]
+  H --> B
+```
 
-### 3. 에이전트 CLI 세팅
-- **Claude CLI**: `npm install -g @anthropic-ai/claude-code`
-- **Gemini CLI**: `npm install -g @google/gemini-cli`
+`기록 → 맥락 → AI와 작업 → 확인 후 기록`의 흐름입니다.
 
----
+## 구성
 
-## 💻 CLI 실행 및 로그인 (Authentication)
-설치가 완료되면 터미널에서 아래 명령어를 통해 AI를 즉시 호출할 수 있습니다.
+| 구분 | 사용 | 상태 |
+|---|---|---|
+| 시작 스크립트 | Bash `ignite.sh` | 저장소 포함 |
+| 운영 규칙 | `AGENTS.md`, `templates/CLAUDE.md`, `templates/GEMINI.md` | 저장소 포함 |
+| 기록 공간 | Obsidian Vault | 수업에서 설치 |
+| 터미널 | [Terminal 플러그인](https://github.com/polyipseity/obsidian-terminal) | Windows 수업용 확장 |
+| 조회 | Dataview 플러그인 | Windows 수업용 확장 |
+| AI CLI | [Antigravity CLI (agy)](https://antigravity.google/docs/cli-install?app=antigravity-ide) / [Codex CLI](https://learn.chatgpt.com/docs/codex/cli) | 선택 설치 |
 
-**기본 실행 명령어**
-- Claude CLI: `claude`
-- Gemini CLI: `gemini`
+## 시작하기
 
-**초기 로그인 및 설정 방식**
-- **플랫폼 구독자**: 명령어 입력 시 브라우저 창이 팝업되며, 웹 로그인 연동을 통해 즉시 사용 가능합니다.
-- **비구독자 (API 사용자)**: 각 플랫폼의 API Key 발급이 선행되어야 합니다. 초기 실행 시 터미널 안내에 따라 API Key를 입력하여 환경을 세팅하십시오.
+### 1. 저장소를 받습니다
 
----
+Git을 쓸 수 있다면 아래처럼 받습니다. Git이 없다면 GitHub의 **Code → Download ZIP**으로 내려받아 압축을 풀어도 됩니다.
 
-## 🚀 실행 방법 (Getting Started)
-터미널 플러그인을 열거나 로컬 터미널에서 아래 명령어를 실행하여 나만의 위키 구조를 생성하십시오. 추가적인 시스템 개념은 [인터랙티브 가이드](https://ljhljh0703-cmd.github.io/sub-brain-engine/)에서 확인 가능합니다.
+```powershell
+git clone https://github.com/ljhljh0703-cmd/Park-Dal-Wiki.git
+cd Park-Dal-Wiki
+```
 
-### Mac / Linux 사용자
+### 2. Obsidian에서 폴더를 엽니다
+
+Obsidian에서 **Open folder as vault**를 누르고, 방금 받은 `Park-Dal-Wiki` 폴더를 선택합니다.
+
+### 3. 플러그인을 준비합니다
+
+1. **Settings → Community plugins**에서 Restricted mode를 끕니다.
+2. **Browse**에서 `Terminal`을 찾아 **Install → Enable** 합니다.
+3. 같은 곳에서 `Dataview`를 찾아 **Install → Enable** 합니다.
+4. Windows에서는 PowerShell을 안정적으로 연결하기 위해 아래 한 줄을 실행합니다.
+
+```powershell
+py -m pip install psutil pywinctl typing_extensions
+```
+
+명령 팔레트는 `Ctrl + P`입니다. `터미널: 루트 디렉토리에서 터미널 open: 통합`을 선택하면 Obsidian 안에서 터미널을 열 수 있습니다. 명령을 입력한 창에서 결과도 바로 확인합니다.
+
+### 4. agy를 설치하고 실행합니다
+
+Obsidian 통합 터미널 또는 Windows PowerShell에 아래 명령을 붙여넣습니다.
+
+```powershell
+irm https://antigravity.google/cli/install.ps1 | iex
+```
+
+설치가 끝나면 터미널을 닫았다가 다시 열고, 다음을 차례로 실행합니다.
+
+```powershell
+agy --version
+agy
+```
+
+`--version`의 `--`는 긴 대시가 아니라 키보드의 `-`를 두 번 누른 것입니다. `agy`를 처음 실행하면 로그인 화면이 열릴 수 있습니다.
+
+### 5. Codex CLI도 쓰고 싶다면 (선택)
+
+먼저 [Node.js LTS](https://nodejs.org/)를 설치하고, PowerShell을 새로 엽니다. Windows PowerShell에서 실행 정책 때문에 `npm.ps1` 또는 `codex.ps1`이 막히는 경우가 있어, 아래처럼 `.cmd` 명령을 사용합니다.
+
+```powershell
+node --version
+npm.cmd --version
+npm.cmd install -g @openai/codex
+codex.cmd
+```
+
+첫 실행에서 로그인 방법을 선택합니다. 설치가 끝난 뒤에는 원하는 작업 폴더에서 `codex.cmd`를 실행하면 됩니다.
+
+### 6. 기본 폴더를 만듭니다
+
+`ignite.sh`는 Bash 스크립트입니다. Windows에서는 Git Bash 또는 WSL에서 저장소 폴더로 이동한 뒤 실행합니다.
+
 ```bash
 bash ignite.sh
 ```
 
-### Windows 사용자
-Windows 기본 CMD 또는 PowerShell 환경에서는 .sh 스크립트가 직접 실행되지 않습니다. 반드시 Git Bash 또는 WSL(Windows Subsystem for Linux) 환경이 필요합니다.
+목적을 한 줄로 입력하면 `daily`, `learnings`, `methods`, `thoughts`, `graph`, `docs` 폴더와 두 운영 템플릿이 만들어집니다.
 
-```bash
-# WSL(Windows Subsystem for Linux) 사용 시 실행 예시
-wsl bash ignite.sh
+## 정직한 안내
 
-# Git Bash 사용 시 실행 예시
-bash ignite.sh
-```
-*(추후 Windows 네이티브 환경을 지원하는 ignite.bat 파일이 추가될 예정입니다.)*
+- 이 저장소는 시작 스크립트와 운영 템플릿을 제공합니다. Obsidian, 플러그인, agy, Codex CLI는 저장소에 포함되어 있지 않습니다.
+- agy와 Codex CLI는 각 서비스의 계정·요금제·접속 환경에 따라 사용할 수 있는 범위가 달라집니다.
+- AI가 노트를 자동으로 정답으로 확정하지 않습니다. 중요한 기록은 내용을 읽고 고친 뒤 저장하세요.
+- `ignite.sh`는 Bash용입니다. Windows PowerShell만으로는 실행되지 않습니다.
 
----
+## 안내 페이지
 
-## ⚡ 06.12 Windows 실행 방법 (Windows + Claude Code CLI 통합 가이드)
+[간단 안내 화면](./index.html) · [Park Dal WIKI 소개 페이지](./ParkDalWIKI.html)
 
-### 1. 사전 필수 작업 (Python 세팅)
-Obsidian 내장 터미널 플러그인이 로컬 프로세스를 정상적으로 감지하려면 공식 파이썬 환경이 필수적입니다.
-1. **MS 스토어 가짜 링크 차단**: 윈도우 검색창에 "앱 실행 별칭 관리" 검색 후 진입하여 `python.exe`, `python3.exe`, `py.exe` 항목을 전부 **끔(Off)**으로 토글합니다.
-2. **공식 Python 설치**:
-   - Python 공식 홈페이지에서 최신 Windows Installer를 다운로드하여 실행합니다.
-   - **[필수]** 설치 창 최하단의 `Add python.exe to PATH` 체크박스를 반드시 체크한 뒤 `Install Now`를 진행합니다.
-3. **의존성 패키지 설치**:
-   - 윈도우 명령 프롬프트(CMD)를 새로 열고 아래 명령어를 실행합니다.
-   ```cmd
-   pip install psutil pywinctl typing_extensions
-   ```
+## License
 
-### 2. Obsidian 내장 터미널 플러그인 세팅
-외부 터미널 창 이동 없이 Obsidian 안에서 CLI를 제어하기 위한 세팅입니다.
-1. Obsidian 실행 후 **설정(⚙️) → 커뮤니티 플러그인(Community plugins)**으로 이동합니다.
-2. **제한 모드 해제(Turn off restricted mode)**를 클릭합니다.
-3. 탐색(Browse) 버튼을 누른 뒤 `Terminal` (개발자: polyipseity) 플러그인을 검색하여 설치(Install) 및 **활성화(Enable)**합니다.
-4. 단축키 `Ctrl + P`를 눌러 명령어 팔레트를 켠 뒤, 아래 명령어를 선택해 내장 터미널을 분할 창으로 띄웁니다.
-   ```text
-   Terminal: Open root directory in terminal: Integrated
-   ```
-
-### 3. Claude Code CLI 네이티브 설치
-오류가 잦은 Node.js(npm) 방식 대신 Anthropic 공식 Windows 네이티브 스크립트를 사용합니다.
-1. 띄워놓은 Obsidian 내장 터미널(CMD) 창에 아래 명령어를 입력하고 엔터를 누릅니다.
-   ```cmd
-   curl -fsSL [https://claude.ai/install.cmd](https://claude.ai/install.cmd) -o install.cmd && install.cmd && del install.cmd
-   ```
-2. 터미널에 `Installation complete!` 문구가 뜰 때까지 대기합니다.
-
-### 4. 환경 변수 오류 우회 및 최종 실행
-윈도우 시스템 특성상 설치 직후 `claude` 명령어 단독 입력 시 경로를 찾지 못하는 에러(*내부 또는 외부 명령...이 아닙니다*)가 발생합니다. 이때는 절대 경로 직구 방식으로 즉시 강제 실행할 수 있습니다.
-1. Obsidian 내장 터미널 창에 아래 절대 경로 명령어를 따옴표를 포함하여 그대로 입력합니다.
-   ```cmd
-   "%USERPROFILE%\.local\bin\claude"
-   ```
-2. 정상적으로 로딩 창이 뜨면 앤트로픽 계정 웹 로그인 인증을 진행합니다.
-3. 인증 완료 후, Obsidian 내부에서 자유롭게 Claude 에이전트를 구동하며 노트를 분석하고 위키를 자동 빌드할 수 있습니다.
-
-> ⚠️ **주의**: 만약 추후에 절대 경로 없이 `claude` 단독 명령어만 치고 싶다면, 설정을 마친 후 Obsidian 프로그램을 완전히 종료했다가 다시 실행해야 윈도우 환경 변수가 완전히 동기화됩니다.
-
----
-
-## 🧠 첫 번째 지식 Ingest 하기
-터미널 세팅과 위키 초기화(`ignite.sh`)가 완료되었다면, 별도의 복잡한 스크립트 없이 즉시 AI에게 자연어로 데이터 정리와 저장을 지시할 수 있습니다. 터미널에 아래와 같이 입력하여 첫 지식을 적재해 보십시오.
-
-### 실제 활용 예시
-```bash
-# Claude를 활용한 문서 정리 및 적재
-claude "오늘 읽은 글 내용 정리해서 learnings 폴더에 ingest 해줘"
-
-# Gemini를 활용한 기존 지식과의 구조화 연동
-gemini "새 아이디어를 methods 폴더 내용과 연결해서 구조화해줘"
-```
-
----
-*Inspired by Sub-brain Intelligence. Built for Collective Wisdom.*
+현재 이 저장소에는 `LICENSE` 파일이 없습니다. 재사용·배포·수정 권한은 저장소 작성자에게 확인한 뒤 진행하세요.
