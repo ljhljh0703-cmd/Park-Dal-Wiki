@@ -118,6 +118,13 @@ bash ignite.sh
 - AI가 노트를 자동으로 정답으로 확정하지 않습니다. 중요한 기록은 내용을 읽고 고친 뒤 저장하세요.
 - `ignite.sh`는 Bash용입니다. Windows PowerShell만으로는 실행되지 않습니다.
 
+## 바로 써 보기 — 제안서 레인 (proposal-lane)
+
+제안서·지원사업 신청서를 **근거 카드부터** 쌓아 쓰는 작업 폴더가 들어 있습니다. Obsidian이나 터미널 없이, **폴더 + 아무 AI 챗**만으로 시작합니다.
+
+- 처음이면: [`proposal-lane/FIRST-RUN.md`](./proposal-lane/FIRST-RUN.md) — 앉은 자리 30~40분에 내 소재로 카드 3장 + 골격 초안까지.
+- 무엇인지: [`proposal-lane/README.md`](./proposal-lane/README.md) — 완성 예시(가상 데이터) 포함.
+
 ## 안내 페이지
 
 [간단 안내 화면](./index.html) · [Park Dal WIKI 소개 페이지](./ParkDalWIKI.html)
