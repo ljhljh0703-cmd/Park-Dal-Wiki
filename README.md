@@ -15,7 +15,7 @@
 
 - **폴더부터 정합니다.** — `ignite.sh`가 기록·학습·방법론을 위한 기본 폴더와 운영 템플릿을 만듭니다.
 - **기록은 Markdown으로 남깁니다.** — Obsidian에서 쓴 노트가 나중에 다시 찾고 연결할 수 있는 자료가 됩니다.
-- **AI와 함께 씁니다.** — agy 또는 Codex CLI는 선택 도구입니다. AI가 제안한 내용은 사람이 확인한 뒤 기록합니다.
+- **AI와 함께 씁니다.** — 어떤 AI 챗(웹 포함)이든 쓸 수 있고, CLI 도구(Codex CLI 등)는 선택입니다. AI가 제안한 내용은 사람이 확인한 뒤 기록합니다.
 
 ## 구조
 
@@ -23,7 +23,7 @@
 flowchart LR
   A[기록과 자료] --> B[Obsidian Vault]
   B --> C[Markdown 노트]
-  C --> D[AI CLI\nagy 또는 Codex]
+  C --> D[AI 도구\n아무 AI 챗 또는 Codex CLI]
   D --> E[제안과 초안]
   E --> F[확인 후 기록]
   G[ignite.sh] --> H[기본 폴더와 운영 템플릿]
@@ -41,7 +41,7 @@ flowchart LR
 | 기록 공간 | Obsidian Vault | 수업에서 설치 |
 | 터미널 | [Terminal 플러그인](https://github.com/polyipseity/obsidian-terminal) | Windows 수업용 확장 |
 | 조회 | Dataview 플러그인 | Windows 수업용 확장 |
-| AI CLI | [Antigravity CLI (agy)](https://antigravity.google/docs/cli-install?app=antigravity-ide) / [Codex CLI](https://learn.chatgpt.com/docs/codex/cli) | 선택 설치 |
+| AI 도구 | 아무 AI 챗(웹 포함) / [Codex CLI](https://learn.chatgpt.com/docs/codex/cli) | 선택 설치 |
 
 ## 시작하기
 
@@ -71,22 +71,10 @@ py -m pip install psutil pywinctl typing_extensions
 
 명령 팔레트는 `Ctrl + P`입니다. `터미널: 루트 디렉토리에서 터미널 open: 통합`을 선택하면 Obsidian 안에서 터미널을 열 수 있습니다. 명령을 입력한 창에서 결과도 바로 확인합니다.
 
-### 4. agy를 설치하고 실행합니다
+### 4. AI 도구를 준비합니다 (선택)
 
-Obsidian 통합 터미널 또는 Windows PowerShell에 아래 명령을 붙여넣습니다.
-
-```powershell
-irm https://antigravity.google/cli/install.ps1 | iex
-```
-
-설치가 끝나면 터미널을 닫았다가 다시 열고, 다음을 차례로 실행합니다.
-
-```powershell
-agy --version
-agy
-```
-
-`--version`의 `--`는 긴 대시가 아니라 키보드의 `-`를 두 번 누른 것입니다. `agy`를 처음 실행하면 로그인 화면이 열릴 수 있습니다.
+이 킷은 특정 AI 도구가 없어도 씁니다 — md 파일 내용을 **아무 AI 챗(웹 포함)에 붙여넣는 것**으로 시작할 수 있습니다.
+터미널에서 쓰는 CLI 도구를 원하면 아래 5번(Codex CLI)을 참고하세요.
 
 ### 5. Codex CLI도 쓰고 싶다면 (선택)
 
@@ -113,8 +101,8 @@ bash ignite.sh
 
 ## 정직한 안내
 
-- 이 저장소는 시작 스크립트와 운영 템플릿을 제공합니다. Obsidian, 플러그인, agy, Codex CLI는 저장소에 포함되어 있지 않습니다.
-- agy와 Codex CLI는 각 서비스의 계정·요금제·접속 환경에 따라 사용할 수 있는 범위가 달라집니다.
+- 이 저장소는 시작 스크립트와 운영 템플릿을 제공합니다. Obsidian, 플러그인, Codex CLI 등 외부 도구는 저장소에 포함되어 있지 않습니다.
+- AI 도구는 각 서비스의 계정·요금제·접속 환경에 따라 사용할 수 있는 범위가 달라집니다.
 - AI가 노트를 자동으로 정답으로 확정하지 않습니다. 중요한 기록은 내용을 읽고 고친 뒤 저장하세요.
 - `ignite.sh`는 Bash용입니다. Windows PowerShell만으로는 실행되지 않습니다.
 
