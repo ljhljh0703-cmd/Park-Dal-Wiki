@@ -91,11 +91,21 @@ codex.cmd
 
 ### 6. 기본 폴더를 만듭니다
 
-`ignite.sh`는 Bash 스크립트입니다. Windows에서는 Git Bash 또는 WSL에서 저장소 폴더로 이동한 뒤 실행합니다.
+**Windows** — PowerShell에서 바로 실행합니다. Git Bash나 WSL이 없어도 됩니다.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\ignite.ps1
+```
+
+`-ExecutionPolicy Bypass`는 인터넷에서 받은 스크립트가 정책에 막히는 것을 푸는 부분입니다. 이 명령은 이 파일 하나에만 적용되고 시스템 설정을 바꾸지 않습니다.
+
+**macOS · Linux · Git Bash · WSL**
 
 ```bash
 bash ignite.sh
 ```
+
+둘 중 하나만 실행하면 됩니다. 두 스크립트는 같은 결과를 만듭니다.
 
 목적을 한 줄로 입력하면 `daily`, `learnings`, `methods`, `thoughts`, `graph`, `docs` 폴더와 두 운영 템플릿이 만들어집니다.
 
@@ -104,7 +114,7 @@ bash ignite.sh
 - 이 저장소는 시작 스크립트와 운영 템플릿을 제공합니다. Obsidian, 플러그인, Codex CLI 등 외부 도구는 저장소에 포함되어 있지 않습니다.
 - AI 도구는 각 서비스의 계정·요금제·접속 환경에 따라 사용할 수 있는 범위가 달라집니다.
 - AI가 노트를 자동으로 정답으로 확정하지 않습니다. 중요한 기록은 내용을 읽고 고친 뒤 저장하세요.
-- `ignite.sh`는 Bash용입니다. Windows PowerShell만으로는 실행되지 않습니다.
+- `ignite.sh`는 Bash용, `ignite.ps1`은 PowerShell용입니다. 운영체제에 맞는 것 하나만 실행하세요.
 
 ## 바로 써 보기 — 제안서 레인 (proposal-lane)
 
