@@ -7,6 +7,26 @@
 ![workflow](https://img.shields.io/badge/workflow-Obsidian%20Vault-111111?style=flat-square)
 ![guide](https://img.shields.io/badge/guide-Windows-111111?style=flat-square)
 
+## 🤖 AI에게 맡기는 경우 — 이것만 하면 됩니다
+
+쓰고 있는 AI(Claude·Codex·agy 등)에 **이 주소를 그대로 붙여넣고 "해줘"라고 한 줄만** 보내세요.
+
+```
+https://github.com/ljhljh0703-cmd/Park-Dal-Wiki
+
+해줘
+```
+
+AI가 저장소의 `AGENTS.md` **0절**부터 읽고, **목적 한 가지만 물어본 뒤** 내려받기·폴더 생성·첫 문서까지 이어서 진행합니다. Obsidian이 없어도 됩니다 — 전부 마크다운 파일이라 메모장으로도 열립니다.
+
+**예전에 쓰던 자료나 다른 AI와 나눈 대화가 있으시면** 그것부터 가져오면 훨씬 빨라집니다 — [`docs/IMPORT-GUIDE.md`](./docs/IMPORT-GUIDE.md). AI가 물어볼 때 있다고만 하시면 됩니다.
+
+**제안서·지원사업 신청서를 쓰려던 거라면** 목적을 물어볼 때 그렇게 답하세요. 그러면 AI가 곧바로 `proposal-lane`의 첫 세션 안내(`FIRST-RUN.md`)로 이어 갑니다.
+
+아래 「시작하기」는 **사람이 직접 손으로 설치할 때**를 위한 안내입니다. AI에게 맡겼다면 읽지 않아도 됩니다.
+
+---
+
 ## 왜 Park-Dal-Wiki인가
 
 메모는 남는데, 막상 필요할 때는 어디에 적었는지부터 다시 찾게 됩니다. Park-Dal-Wiki는 Obsidian 폴더를 지식이 쌓이는 자리로 만들고, AI와 대화할 때 필요한 맥락을 그 안에 차곡차곡 남기기 위한 작은 시작 키트입니다.

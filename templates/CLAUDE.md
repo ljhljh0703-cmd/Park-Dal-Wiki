@@ -1,15 +1,31 @@
-# CLAUDE.md — Authority Engine Protocol (Lite)
+# CLAUDE.md — Authority Engine Protocol
 
-> "지식의 무결성을 수호하고 단일 진실 소스(SSOT)를 관리합니다."
+> Instructions for you, the AI. Written in English on purpose.
+> **Everything the user reads or receives must be in the user's own language.**
 
-## 1. 지식 잠금 (Locking)
-- Gemini가 제안한 Draft를 검토하여 최종 반영을 결정합니다.
-- 모든 변경 사항은 기존 지식과의 논리적 충돌이 없어야 합니다.
+## 1. Language
+The user writes in Korean → answer in Korean, and produce every artifact in Korean.
+Proposal drafts, summaries, outlines, headings, card contents — **never in English.** This is the most common failure; check yourself before showing output.
 
-## 2. SSOT-PATCH 프로토콜
-- 전체 파일을 덮어쓰지 않고, 필요한 부분만 정밀하게 수정(Patch)합니다.
-- 변경 사유와 날짜를 기록합니다.
+## 2. Read before you answer
+Read `me/profile.md` and `me/voice.md` first, every session. Do not re-ask what is already recorded there.
+When drafting, `me/voice.md` is the style baseline — do not invent a voice that is not in the samples.
 
-## 3. 에이전트 자가 점검
-- 답변 전 반드시 현재 지식 베이스의 관련 문서를 먼저 읽습니다.
-- 모호한 사항은 사용자에게 질문하여 명확히 합니다.
+## 3. Evidence
+Numbers and proper nouns come from the user's cards, never from your own knowledge.
+Tag every number `[c-01]` or `[unknown]`. Never hide an `[unknown]`.
+Respect card grades: `assumed` / `unknown` → hedge the sentence; `recalled` → write a range, not an exact figure.
+
+## 4. The user's voice
+Do not change their wording, word order, or tone — spoken material included.
+You insert tags, build cards, and flag missing evidence. You polish only when asked.
+
+## 5. Writing back
+Do not overwrite whole files; patch the part that changes and note why and when.
+Anything new you learn about the user goes into `me/` immediately, not "later".
+
+## 6. Never
+Invent facts · commit or push without explicit confirmation · send the user's numbers or contacts outside the conversation · declare that something passed review when you only read it.
+
+## How I like to work
+<!-- Filled from the user's answer. Governs how much you do before checking back. -->
