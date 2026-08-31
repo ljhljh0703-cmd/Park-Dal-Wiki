@@ -124,7 +124,7 @@ The user's cards and drafts contain **their real business information**, and thi
 - Never send their numbers, clients, or contacts outside the conversation.
 
 ### 0-6. Never
-Invent a purpose, number, or fact (placeholders must carry `[unknown]`) · ask open-ended questions · re-ask after "I don't know" · recite installation steps nobody asked for · open `ParkDalWIKI.html` / `index.html` (large sample files) · delete user files (always rename instead) · commit or push without explicit confirmation · **produce user-facing output in English**.
+Invent a purpose, number, or fact (placeholders must carry `[unknown]`) · ask open-ended questions · re-ask after "I don't know" · recite installation steps nobody asked for · **read** `ParkDalWIKI.html` / `index.html` into context (3.8MB each — it will blow your window; see §5 for what to do with them instead) · delete user files (always move to `_archive/` instead) · silently drop a section when rewriting a document (§6-4) · commit or push without explicit confirmation · **produce user-facing output in English**.
 
 ---
 
@@ -139,7 +139,18 @@ If this repo is already initialized (`CLAUDE.md` and `me/` exist in the root), *
 
 ---
 
-## §1. Bring in what the user already has
+## §1. Roles — this is a dual-engine wiki
+
+Decide which role you are playing, per situation. Both roles write to the same vault; they differ in authority.
+
+| Role | What it does | Authority |
+|---|---|---|
+| **Daily Engine** | Fast capture — collect what the user says, chunk it, propose links between notes | Produces **drafts**. Never settles a fact. |
+| **Authority Engine** | Integrity check, conflict resolution, SSOT confirmation | Confirms a draft into the vault, or rejects it |
+
+A single agent can be both, but **never in the same breath**: draft first, then re-read as the Authority engine before writing anything into the vault as settled. Anything unconfirmed carries `[unknown]`.
+
+## §1-b. Bring in what the user already has
 
 Most users arrive with material already scattered around — old proposals, past chats with other AIs, notes, spreadsheets. **That material is the fastest way to make this tool useful.** Offer it once, early, and never nag:
 
@@ -195,6 +206,9 @@ body: >
 | check whether it is backed up · pre-submission check · rehearsal | `proposal-lane/checks/submit-check.md` |
 | organize a call-for-proposals form | `proposal-lane/forms/FORM-TEMPLATE.md` |
 | bring in old material or past AI chats | `docs/IMPORT-GUIDE.md` |
+| see my wiki as a map · how my notes connect | §5 — have them open `ParkDalWIKI.html` in a browser |
+| grow the wiki · add search, indexing, automation · what else can this do | `docs/GROW-GUIDE.md` |
+| tidy up · old documents · duplicates · which version is current | `docs/VERSION-RULES.md` and §6 |
 | anything else, recording knowledge | §3 above |
 
 **Three rules from `proposal-lane` you must always honor:**
@@ -202,5 +216,45 @@ body: >
 2. Never fill a number from web knowledge or guesswork. Say a card is needed and leave `[unknown]`.
 3. **Never rewrite the user's wording or sentence order** — this applies to spoken material too. The proposal is written in the user's voice.
 
+## §5. The graph view (`ParkDalWIKI.html`)
+
+This repo ships a **d3 knowledge-graph viewer** — the wiki's map of notes and the links between them. `index.html` is the same file (byte-identical), served as the entry page.
+
+- **Never read it into context.** 3.8MB of bundled JS will destroy your window and teach you nothing.
+- When the user asks to *see* their wiki, their notes as a map, or how things connect: **tell them to open that file in a browser.** That is the whole action.
+- The graph is drawn from the vault's markdown and the `[[wikilinks]]` between notes. **So the way to grow the graph is to keep writing notes and linking them** — there is no separate indexing step to run in this repo.
+- `graph/` is where graph output belongs if the user later adds an indexing tool. Empty is the normal state.
+
+## §6. Versions, duplicates, and retiring documents
+
+Notes stop being usable not because there is too little in them, but because **nobody can tell which one is current.** Enforce these three rules; the user-facing version is `docs/VERSION-RULES.md`.
+
+### 6-1. Never delete. Mark and move.
+Retiring a document means adding one line at the top and moving it to `_archive/`:
+```
+> ⛔ 폐기 <date> — 대신 [[replacement]] 를 보세요.
+```
+Deleting also deletes the reason it was dropped. If the user asks you to delete, move it instead and say so in one line.
+
+### 6-2. If the same content lives in two places, one is canonical.
+Put this at the top of the copy, always:
+```
+> ⛔ 사본입니다 (<date> 기준). 정본 = `<path>` — 고칠 때는 정본만 고치고 다시 복사하세요.
+```
+A copy without that line **will** drift. Before editing anything, check whether you are holding the canonical file or a copy.
+
+### 6-3. A new version is the same file, not a new file.
+Never create `rev2.md`. Edit the original and bump `updated:`. Only if a prior state is genuinely needed, snapshot it once as `_archive/<name>-<date>.md`.
+
+### 6-4. 🔴 Before overwriting a document, diff its section list
+This is the failure that costs the most and is the hardest to notice. When you rewrite a file wholesale:
+1. List its `##` headings **before** you write.
+2. List them again after.
+3. **Any heading that disappeared, name it to the user in one line** — "이 절이 빠졌는데 의도한 게 맞나요?"
+
+Never silently drop a section while "improving" a document. If you are not sure a section is obsolete, keep it.
+
+### 6-5. When asked to tidy up
+Produce a **list and a proposed disposition only**. Do not move anything until the user confirms. Show at most 5 items at a time — a 40-row cleanup table gets rubber-stamped, which is the same as no review.
 ---
 *Managed by Sub-brain Intelligence.*
